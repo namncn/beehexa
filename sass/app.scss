@@ -1,0 +1,49 @@
+@import 'bootstrap/bootstrap';
+@import 'variables';
+@import "mixins/mixins-master";
+@import "elements/elements";
+@import "forms/forms";
+@import "modules/accessibility";
+@import "modules/alignments";
+@import "modules/infinite-scroll";
+@import "media/media";
+@import 'site/header/header';
+@import 'site/header/navigation';
+@import 'site/header/topbar';
+@import 'site/primary/pagination';
+@import 'site/primary/posts-and-pages';
+@import 'site/widget/widget';
+@import 'site/footer/footer';
+@import 'site/footer/backtotop';
+@import 'site/footer/copyright';
+
+#pdvn_highlight_mask {
+	position: absolute;
+	border: 1px dashed #ff0000;
+	z-index: 999999999;
+	pointer-events: none;
+}
+
+#pdvn_customize_link {
+  -webkit-transition: background .3s;
+  transition: background .3s;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  color: #fff;
+  border: 1px solid #ff0000;
+  border-radius: 0px;
+  -webkit-box-shadow: rgba(0,0,0,0.2) 0 2px 2px 0, rgba(255,255,255,0.0980392) 0 2px 0 0 inset;
+  box-shadow: rgba(0,0,0,0.2) 0 2px 2px 0, rgba(255,255,255,0.0980392) 0 2px 0 0 inset;
+  font-family: Arial;
+  font-size: 11px;
+  padding: 3px 20px;
+  margin-top: 1px;
+  pointer-events: all;
+  background-color: #ff0000;
+  text-transform: capitalize;
+  white-space: nowrap;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}

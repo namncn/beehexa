@@ -1,0 +1,43 @@
+.post-meta {
+  color: #868686;
+  font-size: 12px;
+  margin-bottom: 10px;
+  span {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.post-item {
+	&:not(:last-child) {
+		margin-bottom: 25px;
+	}
+  .post-title {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+    a {
+      color: #000;
+    }
+  }
+  .post-excerpt {
+    word-wrap: break-word;
+  }
+}
+
+.updated:not(.published) {
+  display: none;
+}
+
+.post-content {
+  word-wrap: break-word;
+}
+
+.single {
+	.post-item {
+		.post-title {
+			margin-top: 0;
+		}
+	}
+}

@@ -1,0 +1,276 @@
+# Copyright (C) 2018 phoenixdigi
+# This file is distributed under the same license as the phoenixdigi package.
+msgid ""
+msgstr ""
+"Project-Id-Version: phoenixdigi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Phoenix Digi Việt Nam <https://phoenixdigi.vn>\n"
+"Last-Translator: Phoenix Digi Việt Nam <https://phoenixdigi.vn>\n"
+"Report-Msgid-Bugs-To: http://phoenixdigi.vn\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../404.php:20
+msgid "Xin lỗi! Trang bạn tìm kiếm không tồn tại."
+msgstr ""
+
+#: ../comments.php:31
+msgctxt "comments title"
+msgid "Bình luận (1)"
+msgid_plural "Bình luận (%s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../comments.php:49
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:52
+msgid "Bình luận cũ hơn"
+msgstr ""
+
+#: ../comments.php:53
+msgid "Bình luận mới hơn"
+msgstr ""
+
+#: ../comments.php:64
+msgid "Đã đóng bình luận."
+msgstr ""
+
+#: ../comments.php:73, ../comments.php:73
+msgid "Bình luận"
+msgstr ""
+
+#: ../comments.php:80, ../comments.php:80
+msgid "Tên"
+msgstr ""
+
+#: ../comments.php:81, ../comments.php:81
+msgid "Email"
+msgstr ""
+
+#: ../comments.php:82, ../comments.php:82
+msgid "Website"
+msgstr ""
+
+#: ../comments.php:91
+msgid "Đăng nhập với nick: %s. Chỉnh sửa tài khoản."
+msgstr ""
+
+#: ../comments.php:94
+msgid "Đăng nhập với nick"
+msgstr ""
+
+#: ../functions.php:66, ../functions.php:103
+msgid "Menu Chính"
+msgstr ""
+
+#: ../functions.php:157, ../inc/sidebar.php:161, ../inc/sidebar.php:204
+msgid "Thanh bên"
+msgstr ""
+
+#: ../functions.php:159
+msgid "Thêm tiện ích vào đây để hiển thị cột bên cạnh nội dung."
+msgstr ""
+
+#. translators: If there are characters in your language that are not
+#: ../functions.php:201
+msgctxt "Libre Franklin font: on or off"
+msgid "on"
+msgstr ""
+
+#: ../searchform.php:16
+msgctxt "label"
+msgid "Tìm kiếm cho:"
+msgstr ""
+
+#: ../searchform.php:18
+msgid "Nhập từ khóa tìm kiếm..."
+msgstr ""
+
+#: ../searchform.php:20
+msgctxt "submit button"
+msgid "Tìm kiếm"
+msgstr ""
+
+#: ../template-fullwidth.php:3
+msgid "Full Width"
+msgstr ""
+
+#: ../inc/branding.php:20
+msgid "CÔNG TY TNHH CÔNG NGHỆ VÀ TRUYỀN THÔNG PHOENIXDIGI VIỆT NAM - PHOENIXDIGI.VN"
+msgstr ""
+
+#: ../inc/branding.php:135
+msgid "Cảm ơn bạn đã sử dụng dịch vụ của <a href=\"http://phoenixdigi.vn\">Phoenix Digi Việt Nam</a>."
+msgstr ""
+
+#: ../inc/class-pdvn-elementor.php:85
+msgid "The <strong>Phoenix Digi Việt Nam</strong> yêu cầu bạn cài đặt plugin <strong><a href=\"%s\">Elementor</strong></a> và bật nó."
+msgstr ""
+
+#: ../inc/customizer.php:106
+msgid "Không chọn"
+msgstr ""
+
+#: ../inc/customizer.php:117
+msgid "Mẫu giao diện"
+msgstr ""
+
+#: ../inc/customizer.php:123, ../inc/customizer.php:137
+msgid "Header"
+msgstr ""
+
+#: ../inc/customizer.php:143, ../inc/customizer.php:157
+msgid "Footer"
+msgstr ""
+
+#: ../inc/customizer.php:171
+msgid "Cài đặt khác"
+msgstr ""
+
+#: ../inc/customizer.php:184
+msgid "Header/Footer Script"
+msgstr ""
+
+#: ../inc/customizer.php:197
+msgid "Header script"
+msgstr ""
+
+#: ../inc/customizer.php:198
+msgid "Dán nội dung để in script lên Header."
+msgstr ""
+
+#: ../inc/customizer.php:212
+msgid "Cho phép nhúng Header script"
+msgstr ""
+
+#: ../inc/customizer.php:226
+msgid "Footer script"
+msgstr ""
+
+#: ../inc/customizer.php:227
+msgid "Dán nội dung để in script xuống Footer."
+msgstr ""
+
+#: ../inc/customizer.php:241
+msgid "Cho phép nhúng Footer script"
+msgstr ""
+
+#: ../inc/customizer.php:254
+msgid "Chân trang"
+msgstr ""
+
+#: ../inc/customizer.php:268
+msgid "Bật/Tắt nút back to top?"
+msgstr ""
+
+#: ../inc/customizer.php:289
+msgid "Copyright"
+msgstr ""
+
+#: ../inc/customizer.php:290
+msgid "Nội dung cuối cùng của trang web."
+msgstr ""
+
+#: ../inc/customizer.php:310
+msgid "Facebook"
+msgstr ""
+
+#: ../inc/customizer.php:324
+msgid "Nhúng Facebook SDK Js?"
+msgstr ""
+
+#: ../inc/customizer.php:337
+msgid "Facebook App ID"
+msgstr ""
+
+#: ../inc/customizer.php:350
+msgid "Sử dụng ngôn ngữ Facebook"
+msgstr ""
+
+#: ../inc/customizer.php:352
+msgid "Tiếng Việt"
+msgstr ""
+
+#: ../inc/customizer.php:353
+msgid "English"
+msgstr ""
+
+#: ../inc/roles.php:9
+msgid "Quản trị viên"
+msgstr ""
+
+#: ../inc/security.php:54
+msgid "ERROR"
+msgstr ""
+
+#: ../inc/security.php:54
+msgid "Stop guessing!"
+msgstr ""
+
+#: ../inc/sidebar.php:145
+msgid "Trang Chủ"
+msgstr ""
+
+#: ../inc/sidebar.php:146
+msgid "Trang Tin tức"
+msgstr ""
+
+#: ../inc/sidebar.php:147
+msgid "Trang Chuyên mục"
+msgstr ""
+
+#: ../inc/sidebar.php:148
+msgid "Trang Lưu trữ chung"
+msgstr ""
+
+#: ../inc/sidebar.php:149
+msgid "Trang Tĩnh"
+msgstr ""
+
+#: ../inc/sidebar.php:150
+msgid "Trang Bài viết"
+msgstr ""
+
+#: ../inc/sidebar.php:189
+msgid "Kiểu hiển thị Thanh bên"
+msgstr ""
+
+#: ../inc/sidebar.php:241
+msgid "Nội dung"
+msgstr ""
+
+#: ../inc/sidebar.php:242
+msgid "Thanh bên/Nội dung"
+msgstr ""
+
+#: ../inc/sidebar.php:243
+msgid "Nội dung/Thanh bên"
+msgstr ""
+
+#: ../inc/template-functions.php:89, ../inc/template-functions.php:97
+msgid "Trang chủ"
+msgstr ""
+
+#: ../inc/template-functions.php:116
+msgid "Đọc thêm &raquo;<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: ../inc/template-functions.php:175
+msgid "Lên đầu trang"
+msgstr ""
+
+#: ../inc/tgm/tgm-register.php:23
+msgid "Yoast SEO"
+msgstr ""
+
+#: ../inc/hook/before-header/skip-link.php:16
+msgid "Skip to content"
+msgstr ""

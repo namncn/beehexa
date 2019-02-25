@@ -1,0 +1,19 @@
+.site-header {
+  position: relative;
+  margin-bottom: 20px;
+  .site-branding {
+    padding: 10px 0;
+    .hamburger {
+      display: none;
+      font-size: 1.7rem;
+      cursor: pointer;
+      background: none;
+    }
+    @include media-breakpoint-down(md) {
+      .hamburger {
+        display: block;
+        border: none;
+      }
+    }
+  }
+}
