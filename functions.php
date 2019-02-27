@@ -93,3 +93,4 @@ require_once get_theme_file_path( '/inc/shortcodes.php' );
 require_once get_theme_file_path( '/inc/sidebars.php' );
 require_once get_theme_file_path( '/inc/widgets.php' );
 require_once get_theme_file_path( '/inc/woocommerce.php' );
+require_once get_theme_file_path( '/elementor/init.php' );

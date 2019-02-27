@@ -1,18 +1,15 @@
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  box-sizing: inherit;
+:root {
+  font-size: 16px;
 }
-
-body {
-  background: $color__background-body; /* Fallback for when there is no custom background color defined. */
-  font-family: sans-serif;
-  font-size: 1.4rem;
+html, body {
+  font-family: 'TT Commons', Arial, Helvetica, sans-serif;
+  font-size: 1.0625rem;
+  color: #697A89;
 }
 
 a {
@@ -50,6 +47,66 @@ img {
 
 figure {
   margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+h1 {
+	font-weight: 600;
+	font-size: 4rem;
+	letter-spacing: -0.25px;
+	line-height: 1.125;
+	color: #022144;
+	margin-bottom: 20px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.125;
+  color: #022144;
+  margin-bottom: 20px;
+  &.sub-h1 {
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+    color: #697A89;
+	}
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.167;
+  color: #022144;
+  margin-bottom: 10px;
+}
+
+h6 {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.125;
+  color: #022144;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.0625rem;
+  line-height: 1.375;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 991px) {
+	h1 {
+	  font-size: 3rem;
+	}
+}
+
+@media (max-width: 575px) {
+	h1 {
+	  font-size: 2.5rem;
+	}
+	h3 {
+    font-size: 1.75rem;
+	}
 }
 
 @import "tables";

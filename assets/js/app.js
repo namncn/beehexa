@@ -18,14 +18,19 @@
     }, 800);
     return false;
   });
-  $('.search-overlay .btn-close').click(function () {
-    $('.search-overlay').removeClass('open');
+
+  $('.menu-item-has-children > a').append('<span class="drop-arrow"></span>');
+
+  $('.menu-item-has-children > a').click(function(event) {
+  	event.preventDefault();
+  	$(this).parents('.menu-item-has-children').find('.sub-menu').toggleClass('d-block');
   });
-  $('.nav-search-item').click(function () {
-    $('.main-navigation').toggleClass('header-search-form-open');
+
+  $('.search-toggle').click(function(event) {
+  	$('.header-search-form').toggleClass('search-opened');
   });
-  $('.hamburger').click(function () {
-    $('.main-navigation').toggleClass('active');
+
+  $('.navbar-toggler').click(function(event) {
+  	$('header#mashead').toggleClass('header-expanded');
   });
-  $('.menu-item-has-children').prepend('<i class="fa fa-angle-down"></i>');
 })(jQuery);

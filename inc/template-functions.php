@@ -392,17 +392,3 @@ function pdvn_mobile_menu_fallback() {
 	$fallback_menu = '<ul id="mobile-menu" class="mobile-menu"><li><a href="%1$s" rel="home">%2$s</a></li></ul>';
 	printf( $fallback_menu, esc_url( home_url( '/' ) ), esc_html__( 'Trang chủ', 'phoenixdigi' ) ); // WPCS: XSS OK.
 }
-
-/**
- * [pdvn_customizer_preview_class description]
- * @param  string $section [description]
- * @return [type]          [description]
- */
-function pdvn_customizer_preview_class( $section = '' ) {
-	$class = '';
-	if ( is_customize_preview() ) {
-		$class = 'customizable customize-section-' . $section;
-	}
-
-	return $class;
-}
