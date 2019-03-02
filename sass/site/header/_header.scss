@@ -1,6 +1,5 @@
 .site-header {
   position: relative;
-  margin-bottom: 20px;
   .site-branding {
     padding: 10px 0;
     .hamburger {
@@ -37,7 +36,7 @@
 	    .search-icon {
 		    width: 20px;
 		    height: 20px;
-		    fill: #fff;
+		    fill: #697a89;
 	    }
 		}
 		.header-search-form {
@@ -58,7 +57,7 @@
 			    background-color: transparent;
 			    width: 100%;
 			    border: 0;
-			    border-bottom: 1px solid #fff;
+			    border-bottom: 1px solid #697a89;
 			    outline: none;
 			    padding: 1px 20px;
 				}
@@ -67,15 +66,11 @@
   }
 }
 
-.white-header .utility-nav .utility-container .search-toggle .search-icon, .homepage-tpl header .utility-nav .utility-container .search-toggle .search-icon, .solutions-tpl header .utility-nav .utility-container .search-toggle .search-icon, .blue-header-tpl header .utility-nav .utility-container .search-toggle .search-icon {
-  fill: #fff;
-}
-
 .secondary-nav {
 	#topbar-menu {
 		li.menu-item {
 			a {
-				color: #fff;
+				color: #697a89;
 		    display: block;
 			  padding: .5rem 1rem;
 			  &:hover {
@@ -123,15 +118,6 @@
   white-space: normal;
 }
 
-.action-wrap .btn {
-	border-color: #fff;
-  color: #fff;
-  &:hover {
-  	background-color: #fff;
-    color: #2496ed;
-  }
-}
-
 #navbar {
 	ul.navbar-nav {
 		> li.menu-item {
@@ -139,7 +125,7 @@
 			> a {
 				display: block;
 		    padding: .5rem 1rem;
-		    color: #fff;
+		    color: #697a89;
 		    &:hover {
 		    	text-decoration: underline;
 		    }
@@ -243,7 +229,7 @@
     height: 18px;
 		span {
 	    width: 26px;
-	    border-top: 2px solid #fff;
+	    border-top: 2px solid #022144;
 	    display: block;
 	    position: absolute;
 	    left: 0;
@@ -259,10 +245,25 @@
 	}
 }
 
-header .main-nav {
+.action-wrap {
+  margin-top: 50px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.main-nav {
   -webkit-transition: background-color 300ms ease;
   transition: background-color 300ms ease;
   padding-top: 30px;
+  .action-wrap .btn {
+		border-color: #022144;
+	  color: #022144;
+	  &:hover {
+	  	background-color: #697a89;
+	  	border-color: #697A89;
+	    color: #fff;
+	  }
+	}
 }
 
 .header-expanded {
@@ -387,5 +388,34 @@ header .main-nav {
 		    color: #fff;
 		  }
 		}
+	}
+}
+
+.home, .header-white {
+	.utility-nav {
+		.utility-container {
+			.search-toggle {
+				.search-icon {
+				  fill: #fff;
+				}
+			}
+			.header-search-form #searchForm input {
+				border-bottom: 1px solid #fff;
+			}
+		}
+	}
+	.secondary-nav #topbar-menu li.menu-item a, #navbar ul.navbar-nav>li.menu-item>a, .main-nav .action-wrap .btn {
+		color: #fff;
+	}
+	.main-nav .action-wrap .btn {
+		border-color: #fff;
+		&:hover {
+			border-color: #fff;
+			background: #fff;
+			color: #2496ed;
+		}
+	}
+	.navbar-toggler span {
+		border-color: #fff;
 	}
 }

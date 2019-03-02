@@ -205,11 +205,25 @@ final class Elementor {
 		require_once get_theme_file_path( '/elementor/widgets/topbar.php' );
 		require_once get_theme_file_path( '/elementor/widgets/nav-menu.php' );
 		require_once get_theme_file_path( '/elementor/widgets/featured-card.php' );
+		require_once get_theme_file_path( '/elementor/widgets/logo-peel.php' );
+		require_once get_theme_file_path( '/elementor/widgets/image-text.php' );
+		require_once get_theme_file_path( '/elementor/widgets/cta-section.php' );
+		require_once get_theme_file_path( '/elementor/widgets/clients.php' );
+		require_once get_theme_file_path( '/elementor/widgets/cubes-background.php' );
+		require_once get_theme_file_path( '/elementor/widgets/savings.php' );
+		require_once get_theme_file_path( '/elementor/widgets/illustration-cards.php' );
 
 		// Register widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Topbar() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Nav_Menu() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Featured_Card() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Logo_Peel() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Image_Text() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Cta_Section() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Clients() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Cubes_Background() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Savings() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Illustration_Cards() );
 
 	}
 

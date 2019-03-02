@@ -2,18 +2,18 @@
 namespace Phoenixdigi\Elementor\Widget;
 
 /**
- * Nav_Menu Widget.
+ * Clients Widget.
  *
  * Elementor widget that inserts an embbedable content into the page, from any given URL.
  *
  * @since 1.0.0
  */
-class Nav_Menu extends \Elementor\Widget_Base {
+class Clients extends \Elementor\Widget_Base {
 
 	/**
 	 * Get widget name.
 	 *
-	 * Retrieve Nav_Menu widget name.
+	 * Retrieve Clients widget name.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -21,13 +21,13 @@ class Nav_Menu extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'phoenixdigi-nav-menu';
+		return 'phoenixdigi-clients';
 	}
 
 	/**
 	 * Get widget title.
 	 *
-	 * Retrieve Nav_Menu widget title.
+	 * Retrieve Clients widget title.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -35,7 +35,7 @@ class Nav_Menu extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Nav Menu', 'phoenixdigi' );
+		return __( 'Clients', 'phoenixdigi' );
 	}
 
 	/**
@@ -49,7 +49,7 @@ class Nav_Menu extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-nav-menu';
+		return 'eicon-carousel';
 	}
 
 	/**
@@ -77,17 +77,19 @@ class Nav_Menu extends \Elementor\Widget_Base {
 	protected function _register_controls() {
 
 		$this->start_controls_section(
-			'section_logo',
+			'section_content',
 			[
-				'label' => __( 'Logo', 'phoenixdigi' ),
+				'label' => __( 'Content', 'phoenixdigi' ),
 			]
 		);
 
-		$this->add_control(
-			'logo',
+		$repeater = new \Elementor\Repeater();
+
+		$repeater->add_control(
+			'image',
 			[
-				'label' => __( 'Choose Image', 'phoenixdigi' ),
-				'type' => \Elementor\Controls_Manager::MEDIA,
+				'label'   => __( 'Choose Image', 'phoenixdigi' ),
+				'type'    => \Elementor\Controls_Manager::MEDIA,
 				'dynamic' => [
 					'active' => true,
 				],
@@ -97,25 +99,24 @@ class Nav_Menu extends \Elementor\Widget_Base {
 			]
 		);
 
-		$this->end_controls_section();
-
-		$this->start_controls_section(
-			'section_link',
-			[
-				'label' => __( 'Link', 'phoenixdigi' ),
-			]
-		);
-
-		$this->add_control(
+		$repeater->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'phoenixdigi' ),
-				'type' => \Elementor\Controls_Manager::URL,
+				'label'   => __( 'Link', 'phoenixdigi' ),
+				'type'    => \Elementor\Controls_Manager::URL,
 				'dynamic' => [
 					'active' => true,
 				],
 				'placeholder' => __( 'https://your-link.com', 'phoenixdigi' ),
-				'show_label' => false,
+			]
+		);
+
+		$this->add_control(
+			'images',
+			[
+				'label'   => __( 'Social Icons', 'elementor' ),
+				'type'    => \Elementor\Controls_Manager::REPEATER,
+				'fields'  => $repeater->get_controls(),
 			]
 		);
 
@@ -135,31 +136,21 @@ class Nav_Menu extends \Elementor\Widget_Base {
 
 		$settings = $this->get_settings_for_display();
 
-		$logo = $settings['logo'];
-		$link = $settings['link'];
+		$images = $settings['images'];
 		?>
-		<nav class="main-nav navbar navbar-expand-lg">
+		<div class="clients-showcase-section">
 			<div class="container">
-				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $logo['url']; ?>" alt=""></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-	        <span></span>
-	        <span></span>
-	      </button>
-	      <div id="navbar" class="collapse navbar-collapse">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'primary',
-							'menu_id'        => '',
-							'menu_class'     => 'navbar-nav m-auto',
-							'container'      => '',
-						));
-					?>
-		      <div class="action-wrap my-2 my-md-0 ml-0 mr-0">
-	          <a class="btn" href="<?php echo $link['url']; ?>"<?php echo $link['is_external'] ? ' target="_blank"' : ''; echo $link['nofollow'] ? ' rel="nofollow"' : ''; ?>>Get Started</a>
-	        </div>
-	      </div>
+				<div class="row">
+					<?php foreach ( $images as $index => $item ) : ?>
+					<div class="logo-wrap col-lg-2 col-4">
+						<a href="<?php echo $item['link']['url']; ?>"<?php echo $item['link']['is_external'] ? ' target="_blank"' : ''; echo $item['link']['nofollow'] ? ' rel="nofollow"' : ''; ?>>
+							<img src="<?php echo $item['image']['url']; ?>" class="image" alt="">
+						</a>
+					</div>
+					<?php endforeach; ?>
+				</div>
 			</div>
-		</nav>
+		</div>
 		<?php
 	}
 }
