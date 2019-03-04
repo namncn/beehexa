@@ -2,3 +2,25 @@ table {
   margin: 0 0 1.5em;
   width: 100%;
 }
+
+table {
+	i {
+	  width: 8px;
+	  height: 15px;
+	  display: inline-block;
+	  transform: rotate(45deg);
+	  border: solid #022144;
+	  border-width: 0 2px 2px 0;
+	}
+	td:first-child {
+    text-align: left;
+	}
+}
+
+table td:first-child {
+  text-align: left;
+}
+
+.table-bordered td, .table-bordered th {
+  border: 1px solid #dee2e6;
+}

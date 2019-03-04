@@ -20,21 +20,7 @@ get_header(); ?>
 
 				<main id="main" class="site-main" role="main">
 
-					<?php if ( have_posts() ) : ?>
-
-						<?php while ( have_posts() ) : the_post(); ?>
-
-							<?php get_template_part( 'templates/loop/content' ); ?>
-
-						<?php endwhile; ?>
-
-						<?php pdvn_posts_pagination(); ?>
-
-					<?php else : ?>
-
-						<?php get_template_part( 'templates/loop/content', 'none' ); ?>
-
-					<?php endif; ?>
+					<?php the_content(); ?>
 
 				</main>
 

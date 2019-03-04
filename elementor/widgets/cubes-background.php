@@ -252,7 +252,7 @@ class Cubes_Background extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'heading_2_max_width',
 			[
-				'label'     => __( 'Max Width', 'elementor' ),
+				'label'     => __( 'Max Width', 'phoenixdigi' ),
 				'type'      => \Elementor\Controls_Manager::NUMBER,
 				'default'   => 736,
 				'selectors' => [

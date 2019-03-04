@@ -2,18 +2,18 @@
 namespace Phoenixdigi\Elementor\Widget;
 
 /**
- * Illustration_Cards Widget.
+ * Management Widget.
  *
  * Elementor widget that inserts an embbedable content into the page, from any given URL.
  *
  * @since 1.0.0
  */
-class Illustration_Cards extends \Elementor\Widget_Base {
+class Management extends \Elementor\Widget_Base {
 
 	/**
 	 * Get widget name.
 	 *
-	 * Retrieve Illustration_Cards widget name.
+	 * Retrieve Management widget name.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -21,13 +21,13 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'phoenixdigi-illustration-cards';
+		return 'phoenixdigi-management';
 	}
 
 	/**
 	 * Get widget title.
 	 *
-	 * Retrieve Illustration_Cards widget title.
+	 * Retrieve Management widget title.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -35,7 +35,7 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Illustration Cards', 'phoenixdigi' );
+		return __( 'Management', 'phoenixdigi' );
 	}
 
 	/**
@@ -91,8 +91,8 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 				'dynamic' => [
 					'active' => true,
 				],
-				'default'     => __( 'How Docker Works for You', 'phoenixdigi' ),
-				'placeholder' => __( 'How Docker Works for You', 'phoenixdigi' ),
+				'default'     => __( 'Management', 'phoenixdigi' ),
+				'placeholder' => __( 'Management', 'phoenixdigi' ),
 			]
 		);
 
@@ -120,8 +120,8 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 				'dynamic' => [
 					'active' => true,
 				],
-				'default'     => __( 'Developers', 'phoenixdigi' ),
-				'placeholder' => __( 'Developers', 'phoenixdigi' ),
+				'default'     => __( 'Steve Singh', 'phoenixdigi' ),
+				'placeholder' => __( 'Steve Singh', 'phoenixdigi' ),
 			]
 		);
 
@@ -129,7 +129,7 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 			'excerpt',
 			[
 				'label'   => __( 'Excerpt', 'phoenixdigi' ),
-				'type'    => \Elementor\Controls_Manager::WYSIWYG,
+				'type'    => \Elementor\Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
@@ -138,25 +138,26 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 		);
 
 		$repeater->add_control(
-			'button',
+			'linkedin',
 			[
-				'label'   => __( 'Button Text', 'phoenixdigi' ),
-				'type'    => \Elementor\Controls_Manager::TEXT,
-				'dynamic' => [
-					'active' => true,
+				'label'       => __( 'Linked In Url', 'phoenixdigi' ),
+				'type'        => \Elementor\Controls_Manager::URL,
+				'label_block' => true,
+				'default'     => [
+					'is_external' => 'true',
 				],
-				'default'     => __( 'Get Started', 'phoenixdigi' ),
-				'placeholder' => __( 'Get Started', 'phoenixdigi' ),
+				'placeholder' => __( 'https://your-link.com', 'phoenixdigi' ),
 			]
 		);
 
 		$repeater->add_control(
-			'link',
+			'twitter',
 			[
-				'label'   => __( 'Link', 'phoenixdigi' ),
-				'type'    => \Elementor\Controls_Manager::URL,
-				'dynamic' => [
-					'active' => true,
+				'label'       => __( 'Twitter Url', 'phoenixdigi' ),
+				'type'        => \Elementor\Controls_Manager::URL,
+				'label_block' => true,
+				'default'     => [
+					'is_external' => 'true',
 				],
 				'placeholder' => __( 'https://your-link.com', 'phoenixdigi' ),
 			]
@@ -190,28 +191,37 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 		$section_title = $settings['section_title'];
 		$items         = $settings['items'];
 		?>
-		<div class="illustration-cards">
-			<div class="container">
+		<div class="management-section">
+			<div class="container text-center">
 				<?php if ( $section_title ) : ?>
 				<h2><?php echo esc_html( $section_title ); ?></h2>
 				<?php endif; ?>
-				<div class="illustration-cards-row flex-container">
+				<div class="our-management illustration-cards-row flex-container">
 					<?php foreach ( $items as $index => $item ) : ?>
-						<div class="illustrations-card-item">
+						<div class="illustrations-card-item bio pop-under-source mb-5">
 							<div class="card">
 								<div class="image-wrap">
 									<img class="image" src="<?php echo $item['image']['url']; ?>">
 								</div>
-								<div class="text-wrap">
+								<div class="bio-content text-wrap">
 									<div class="inner">
-										<h4><?php echo esc_html( $item['title'] ); ?></h4>
-										<?php echo wpautop( $item['excerpt'] ); ?>
+										<h3><?php echo esc_html( $item['title'] ); ?></h3>
+										<h4><?php echo $item['excerpt']; ?></h4>
+										<?php if ( $item['linkedin']['url'] || $item['twitter']['url'] ) : ?>
+										<div class="social-icons">
+											<?php if ( $item['linkedin']['url'] ) : ?>
+											<a href="<?php echo $item['linkedin']['url']; ?>" class="linkedin"<?php echo $item['linkedin']['is_external'] ? ' target="_blank"' : ''; echo $item['linkedin']['nofollow'] ? ' rel="nofollow"' : ''; ?>>
+												<img src="<?php echo get_theme_file_uri( 'assets/images/linkedin-color-24.png' ); ?>" alt="Linkedin Logo">
+											</a>
+											<?php endif; ?>
+											<?php if ( $item['twitter']['url'] ) : ?>
+											<a href="<?php echo $item['twitter']['url']; ?>" class="twitter"<?php echo $item['twitter']['is_external'] ? ' target="_blank"' : ''; echo $item['twitter']['nofollow'] ? ' rel="nofollow"' : ''; ?>>
+												<img src="<?php echo get_theme_file_uri( 'assets/images/Twitter_Logo_Blue.svg' ); ?>" alt="Twitter Logo">
+											</a>
+											<?php endif; ?>
+										</div>
+										<?php endif; ?>
 									</div>
-								</div>
-								<div class="links">
-									<a class="arrow-link" href="<?php echo $item['link']['url']; ?>"<?php echo $item['link']['is_external'] ? ' target="_blank"' : ''; echo $item['link']['nofollow'] ? ' rel="nofollow"' : ''; ?>>
-										<?php echo esc_html( $item['button'] ); ?>
-									</a>
 								</div>
 							</div>
 						</div>

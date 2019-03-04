@@ -72,6 +72,7 @@ function pdvn_get_acf_option( $selector, $post_id = false, $format_value = true 
 	return apply_filters( 'pdvn_get_acf_option', get_field( $selector, $post_id, $format_value ) );
 }
 
+require_once get_theme_file_path( '/inc/theme-options.php' );
 require_once get_theme_file_path( '/inc/assets.php' );
 require_once get_theme_file_path( '/inc/ajaxes.php' );
 require_once get_theme_file_path( '/inc/template-functions.php' );

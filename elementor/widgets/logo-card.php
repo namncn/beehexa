@@ -2,18 +2,18 @@
 namespace Phoenixdigi\Elementor\Widget;
 
 /**
- * Illustration_Cards Widget.
+ * Logo_Card Widget.
  *
  * Elementor widget that inserts an embbedable content into the page, from any given URL.
  *
  * @since 1.0.0
  */
-class Illustration_Cards extends \Elementor\Widget_Base {
+class Logo_Card extends \Elementor\Widget_Base {
 
 	/**
 	 * Get widget name.
 	 *
-	 * Retrieve Illustration_Cards widget name.
+	 * Retrieve Logo_Card widget name.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -21,13 +21,13 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'phoenixdigi-illustration-cards';
+		return 'phoenixdigi-card';
 	}
 
 	/**
 	 * Get widget title.
 	 *
-	 * Retrieve Illustration_Cards widget title.
+	 * Retrieve Logo_Card widget title.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -35,7 +35,7 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Illustration Cards', 'phoenixdigi' );
+		return __( 'Logo Card', 'phoenixdigi' );
 	}
 
 	/**
@@ -77,22 +77,30 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 	protected function _register_controls() {
 
 		$this->start_controls_section(
-			'section_content',
+			'section_heading',
 			[
-				'label' => __( 'Content', 'phoenixdigi' ),
+				'label' => __( 'Heading', 'phoenixdigi' ),
 			]
 		);
 
 		$this->add_control(
-			'section_title',
+			'heading',
 			[
-				'label'   => __( 'Title', 'phoenixdigi' ),
+				'label'   => __( 'Heading', 'phoenixdigi' ),
 				'type'    => \Elementor\Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
-				'default'     => __( 'How Docker Works for You', 'phoenixdigi' ),
-				'placeholder' => __( 'How Docker Works for You', 'phoenixdigi' ),
+				'default' => __( 'Customer stories', 'phoenixdigi' ),
+			]
+		);
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_content',
+			[
+				'label' => __( 'Content', 'phoenixdigi' ),
 			]
 		);
 
@@ -101,8 +109,8 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 		$repeater->add_control(
 			'image',
 			[
-				'label'   => __( 'Image', 'phoenixdigi' ),
-				'type'    => \Elementor\Controls_Manager::MEDIA,
+				'label' => __( 'Choose Image', 'phoenixdigi' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
 				'dynamic' => [
 					'active' => true,
 				],
@@ -120,41 +128,39 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 				'dynamic' => [
 					'active' => true,
 				],
-				'default'     => __( 'Developers', 'phoenixdigi' ),
-				'placeholder' => __( 'Developers', 'phoenixdigi' ),
+				'default' => __( 'ADP', 'phoenixdigi' ),
 			]
 		);
 
 		$repeater->add_control(
 			'excerpt',
 			[
-				'label'   => __( 'Excerpt', 'phoenixdigi' ),
+				'label'   => '',
 				'type'    => \Elementor\Controls_Manager::WYSIWYG,
 				'dynamic' => [
 					'active' => true,
 				],
-				'default' => __( 'Tooling that is simple to use, yet powerful and delivers a great user experience so you can focus on what you love — writing great code.', 'phoenixdigi' ),
+				'default' => __( 'How did ADP modernize its applications and build a secure software supply chain to serve its nearly 40 million active users in 113 countries?', 'phoenixdigi' ),
 			]
 		);
 
 		$repeater->add_control(
 			'button',
 			[
-				'label'   => __( 'Button Text', 'phoenixdigi' ),
+				'label'   => __( 'Button', 'phoenixdigi' ),
 				'type'    => \Elementor\Controls_Manager::TEXT,
 				'dynamic' => [
 					'active' => true,
 				],
-				'default'     => __( 'Get Started', 'phoenixdigi' ),
-				'placeholder' => __( 'Get Started', 'phoenixdigi' ),
+				'default' => __( 'Learn more', 'phoenixdigi' ),
 			]
 		);
 
 		$repeater->add_control(
 			'link',
 			[
-				'label'   => __( 'Link', 'phoenixdigi' ),
-				'type'    => \Elementor\Controls_Manager::URL,
+				'label' => __( 'Link', 'phoenixdigi' ),
+				'type' => \Elementor\Controls_Manager::URL,
 				'dynamic' => [
 					'active' => true,
 				],
@@ -187,35 +193,42 @@ class Illustration_Cards extends \Elementor\Widget_Base {
 
 		$settings = $this->get_settings_for_display();
 
-		$section_title = $settings['section_title'];
-		$items         = $settings['items'];
+		$heading = $settings['heading'];
+		$items   = $settings['items'];
 		?>
-		<div class="illustration-cards">
+		<div class="sub-hero-section">
 			<div class="container">
-				<?php if ( $section_title ) : ?>
-				<h2><?php echo esc_html( $section_title ); ?></h2>
-				<?php endif; ?>
-				<div class="illustration-cards-row flex-container">
-					<?php foreach ( $items as $index => $item ) : ?>
-						<div class="illustrations-card-item">
-							<div class="card">
-								<div class="image-wrap">
-									<img class="image" src="<?php echo $item['image']['url']; ?>">
-								</div>
-								<div class="text-wrap">
-									<div class="inner">
-										<h4><?php echo esc_html( $item['title'] ); ?></h4>
-										<?php echo wpautop( $item['excerpt'] ); ?>
+				<h2 class="text-center"><?php echo esc_html( $heading ); ?></h2>
+				<div class="logo-cards-wrap">
+					<div class="logo-cards-row flex-container">
+						<?php foreach ( $items as $item ) : ?>
+						<div class="logo-card-item">
+							<div class="logo-card">
+								<div class="card-front">
+									<div class="image-wrap">
+										<?php if ( $item['image']['url'] ) : ?>
+										<a href="<?php echo $item['link']['url']; ?>"<?php echo $item['link']['is_external'] ? ' target="_blank"' : ''; echo $item['link']['nofollow'] ? ' rel="nofollow"' : ''; ?>>
+											<img class="role_icon" src="<?php echo $item['image']['url']; ?>">
+										</a>
+										<?php endif; ?>
 									</div>
 								</div>
-								<div class="links">
-									<a class="arrow-link" href="<?php echo $item['link']['url']; ?>"<?php echo $item['link']['is_external'] ? ' target="_blank"' : ''; echo $item['link']['nofollow'] ? ' rel="nofollow"' : ''; ?>>
-										<?php echo esc_html( $item['button'] ); ?>
-									</a>
+								<div class="card-reveal">
+									<div class="detail-wrap">
+										<h4><?php echo esc_html( $item['title'] ); ?></h4>
+										<hr>
+										<?php echo wpautop( $item['excerpt'] ); ?>
+										<div class="action-wrap">
+											<a href="<?php echo $item['link']['url']; ?>" class="arrow-link"<?php echo $item['link']['is_external'] ? ' target="_blank"' : ''; echo $item['link']['nofollow'] ? ' rel="nofollow"' : ''; ?>>
+												<?php echo $item['button']; ?>
+											</a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					<?php endforeach; ?>
+						<?php endforeach; ?>
+					</div>
 				</div>
 			</div>
 		</div>

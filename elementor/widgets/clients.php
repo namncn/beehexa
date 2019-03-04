@@ -114,7 +114,7 @@ class Clients extends \Elementor\Widget_Base {
 		$this->add_control(
 			'images',
 			[
-				'label'   => __( 'Social Icons', 'elementor' ),
+				'label'   => __( 'Social Icons', 'phoenixdigi' ),
 				'type'    => \Elementor\Controls_Manager::REPEATER,
 				'fields'  => $repeater->get_controls(),
 			]

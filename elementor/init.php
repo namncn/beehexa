@@ -212,6 +212,13 @@ final class Elementor {
 		require_once get_theme_file_path( '/elementor/widgets/cubes-background.php' );
 		require_once get_theme_file_path( '/elementor/widgets/savings.php' );
 		require_once get_theme_file_path( '/elementor/widgets/illustration-cards.php' );
+		require_once get_theme_file_path( '/elementor/widgets/feature-table-grid.php' );
+		require_once get_theme_file_path( '/elementor/widgets/feature-table-list.php' );
+		require_once get_theme_file_path( '/elementor/widgets/timeline.php' );
+		require_once get_theme_file_path( '/elementor/widgets/management.php' );
+		require_once get_theme_file_path( '/elementor/widgets/logo-card.php' );
+		require_once get_theme_file_path( '/elementor/widgets/tabs.php' );
+		require_once get_theme_file_path( '/elementor/widgets/resource-group.php' );
 
 		// Register widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Topbar() );
@@ -224,6 +231,13 @@ final class Elementor {
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Cubes_Background() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Savings() );
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Illustration_Cards() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Feature_Table_Grid() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Feature_Table_List() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Timeline() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Management() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Logo_Card() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Tabs() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Phoenixdigi\Elementor\Widget\Resource_Group() );
 
 	}
 

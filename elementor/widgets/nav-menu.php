@@ -100,9 +100,21 @@ class Nav_Menu extends \Elementor\Widget_Base {
 		$this->end_controls_section();
 
 		$this->start_controls_section(
-			'section_link',
+			'section_button',
 			[
-				'label' => __( 'Link', 'phoenixdigi' ),
+				'label' => __( 'Button', 'phoenixdigi' ),
+			]
+		);
+
+		$this->add_control(
+			'button',
+			[
+				'label'   => __( 'Button', 'phoenixdigi' ),
+				'type'    => \Elementor\Controls_Manager::TEXT,
+				'default' => __( 'Get Started', 'phoenixdigi' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -135,8 +147,9 @@ class Nav_Menu extends \Elementor\Widget_Base {
 
 		$settings = $this->get_settings_for_display();
 
-		$logo = $settings['logo'];
-		$link = $settings['link'];
+		$button = $settings['button'];
+		$logo   = $settings['logo'];
+		$link   = $settings['link'];
 		?>
 		<nav class="main-nav navbar navbar-expand-lg">
 			<div class="container">
@@ -155,7 +168,7 @@ class Nav_Menu extends \Elementor\Widget_Base {
 						));
 					?>
 		      <div class="action-wrap my-2 my-md-0 ml-0 mr-0">
-	          <a class="btn" href="<?php echo $link['url']; ?>"<?php echo $link['is_external'] ? ' target="_blank"' : ''; echo $link['nofollow'] ? ' rel="nofollow"' : ''; ?>>Get Started</a>
+	          <a class="btn" href="<?php echo $link['url']; ?>"<?php echo $link['is_external'] ? ' target="_blank"' : ''; echo $link['nofollow'] ? ' rel="nofollow"' : ''; ?>><?php echo esc_html( $button ); ?></a>
 	        </div>
 	      </div>
 			</div>

@@ -158,7 +158,7 @@ class Savings extends \Elementor\Widget_Base {
 		$this->add_control(
 			'items',
 			[
-				'label'   => __( 'Items', 'elementor' ),
+				'label'   => __( 'Items', 'phoenixdigi' ),
 				'type'    => \Elementor\Controls_Manager::REPEATER,
 				'fields'  => $repeater->get_controls(),
 			]
